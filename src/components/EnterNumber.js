@@ -6,20 +6,47 @@ class EnterNumber extends Component{
         super();
         this.state ={
             inputNum: '',
+            num1: '',
+            num2: '',
+            
+           
+    
         }
     }
 
 
-    addNum = (event) =>{
+    addNum = (event) => {
 
         this.setState({
             // event.target is the input field
-            inputNum: event.target.value
+            inputNum: event.target.value,
         });
+    
     }
 
+    increaseNum = (event) =>{
+        console.log('this is IncreaseNum')
+        this.setState({
+            // event.target is the input field
+            num1: event.target.value,
+        });
 
+    }
 
+    decreaseNum = (event) =>{
+        console.log('this is decreaseNum')
+
+        this.setState({
+            // event.target is the input field
+            num2: event.target.value,
+        });
+
+    }
+
+    
+   
+
+   
   
 
 
@@ -29,8 +56,9 @@ class EnterNumber extends Component{
 
             <div>
                 <input onChange = {this.addNum} type="number" placeholder="Enter Number"/>
-                <button onChange={this.addNum}>Up</button>
-                <button onChange={this.addNum}>Down</button>
+                <button onClick={this.increaseNum}>Up</button>
+                <button onClick={this.decreaseNum}>Down</button>
+                <pre>{JSON.stringify(this.state)}</pre>
                 
             </div>
             
