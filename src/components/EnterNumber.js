@@ -6,8 +6,6 @@ class EnterNumber extends Component{
         super();
         this.state ={
             inputNum: '',
-            num1: '',
-            num2: '',
             
            
     
@@ -26,23 +24,12 @@ class EnterNumber extends Component{
 
     increaseNum = (event) =>{
         console.log('this is IncreaseNum')
-        this.setState({
-            // event.target is the input field
-            num1: event.target.value,
-        });
+        this.props.increaseNum(this.state.inputNum);
 
     }
 
-    decreaseNum = (event) =>{
-        console.log('this is decreaseNum')
-
-        this.setState({
-            // event.target is the input field
-            num2: event.target.value,
-        });
-
-    }
-
+   
+    
     
    
 
