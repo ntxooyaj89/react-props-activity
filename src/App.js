@@ -34,8 +34,12 @@ class App extends Component {
   decreaseNum = (event) =>{
 
     this.setState({
+
+      total: this.state.total -1
       
     })
+
+    console.log('this is result', this.state);
   }
 
 
@@ -48,7 +52,7 @@ class App extends Component {
         <header className="App-header">
         <Header />
         </header>
-        <EnterNumber increaseNum={this.increaseNum}/>
+        <EnterNumber increaseNum={this.increaseNum} decreaseNum={this.decreaseNum}/>
         <CurrentTotal total={this.state.total}/>
       </div>
     );

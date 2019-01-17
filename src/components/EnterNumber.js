@@ -28,10 +28,10 @@ class EnterNumber extends Component{
 
     }
 
-    // decreaseNum = (event) =>{
-    //     console.log('this is decreaseNum');
-    //     this.props.decreaseNum(this.state.inputNum);
-    // }
+    decreaseNum = (num) =>{
+        console.log('this is decreaseNum');
+        this.props.decreaseNum(this.state.inputNum);
+    }
 
    
     
