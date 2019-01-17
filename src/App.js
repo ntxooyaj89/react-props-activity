@@ -17,9 +17,16 @@ class App extends Component {
   increaseNum = (event) =>{
     console.log(event);
     
-    this.setState({
-      total: this.state.total
-    })
+    let total = +1;
+    
+   this.setState({
+
+    event: this.state.total, total
+
+      
+    
+  })
+    console.log('this is result', this.state);
 
 
   }
@@ -27,7 +34,7 @@ class App extends Component {
   decreaseNum = (event) =>{
 
     this.setState({
-      total: this.state.total
+      
     })
   }
 
