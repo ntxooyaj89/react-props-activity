@@ -49,6 +49,8 @@ class EnterNumber extends Component{
 
             <div>
                 <input onChange = {this.addNum} type="number" placeholder="Enter Number"/>
+                {/* onClick of a button is for indiviual item to react. */}
+                {/* onSubmit is used for a form and is used to trigger many things to react. */}
                 <button onClick={this.increaseNum}>Up</button>
                 <button onClick={this.decreaseNum}>Down</button>
                 <pre>{JSON.stringify(this.state)}</pre>
