@@ -16,13 +16,13 @@ class App extends Component {
     }
   }
 
-  increaseNum = (event) =>{
-    console.log(event);
+  increaseNum = (inputNum) =>{
+    console.log(inputNum);
     
     
    this.setState({
 
-    total: this.state.total + 1
+    total: this.state.total + inputNum,
 
       
     
@@ -37,11 +37,11 @@ class App extends Component {
 
     this.setState({
 
-      total: this.state.total -1
+      total: this.state.total - event,
       
     })
 
-    console.log('this is result', this.state);
+   
   }
 
 
@@ -54,8 +54,14 @@ class App extends Component {
         <header className="App-header">
         <Header />
         </header>
+        
+        {/* below will pass the increaseNum to the files that need it. */}
         <EnterNumber increaseNum={this.increaseNum} decreaseNum={this.decreaseNum}/>
-        <CurrentTotal numIncrease={this.state.total} numDecrease={this.state.total}/>
+        <br/>
+        {/* below we are pass CurrentTotal via props. */}
+        {/* state will have to match... but the name dosen't have to. 
+         But the name we create here will need to be called in CurrentTotal file*/}
+        <CurrentTotal CurrentTotal={this.state.total}/>
         
       </div>
     );

@@ -25,14 +25,15 @@ class EnterNumber extends Component{
 
     increaseNum = (event) =>{
         console.log('this is IncreaseNum')
-
+        // this give input to the function increaseNum.
         this.props.increaseNum(this.state.inputNum);
 
     }
 
     decreaseNum = (event) =>{
         console.log('this is decreaseNum');
-        this.props.decreaseNum(this.state.inputNum);
+        // this pass in a minus num to decreaseNum
+        this.props.decreaseNum( - this.state.inputNum);
     }
 
    
@@ -56,7 +57,7 @@ class EnterNumber extends Component{
                 {/* onSubmit is used for a form and is used to trigger many things to react. */}
                 <button onClick={this.increaseNum}>Up</button>
                 <button onClick={this.decreaseNum}>Down</button>
-                <pre>{JSON.stringify(this.state)}</pre>
+                {/* <pre> EnterNumber state:{JSON.stringify(this.state)}</pre> */}
                 
             </div>
             
