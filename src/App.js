@@ -17,16 +17,16 @@ class App extends Component {
   increaseNum = (event) =>{
     console.log(event);
     
-    let total = +1;
     
    this.setState({
 
-    event: this.state.total, total
+    total: this.state.total + 1
 
       
     
   })
     console.log('this is result', this.state);
+    
 
 
   }
