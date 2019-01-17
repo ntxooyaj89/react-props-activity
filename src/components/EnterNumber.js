@@ -16,8 +16,9 @@ class EnterNumber extends Component{
     addNum = (event) => {
 
         this.setState({
-            // event.target is the input field
-            inputNum: event.target.value,
+            // event.target is anything that is enter into input field.
+            // this will become a string
+            inputNum: parseInt(event.target.value),
         });
     
     }
@@ -29,7 +30,7 @@ class EnterNumber extends Component{
 
     }
 
-    decreaseNum = (num) =>{
+    decreaseNum = (event) =>{
         console.log('this is decreaseNum');
         this.props.decreaseNum(this.state.inputNum);
     }
@@ -48,6 +49,8 @@ class EnterNumber extends Component{
         return (
 
             <div>
+                
+                {/* onChange will trigger the this.addNum function  */}
                 <input onChange = {this.addNum} type="number" placeholder="Enter Number"/>
                 {/* onClick of a button is for indiviual item to react. */}
                 {/* onSubmit is used for a form and is used to trigger many things to react. */}
