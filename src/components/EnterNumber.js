@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 
 class EnterNumber extends Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state ={
             inputNum: '',
             
@@ -24,6 +24,7 @@ class EnterNumber extends Component{
 
     increaseNum = (event) =>{
         console.log('this is IncreaseNum')
+
         this.props.increaseNum(this.state.inputNum);
 
     }

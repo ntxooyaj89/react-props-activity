@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header';
 import EnterNumber from './components/EnterNumber.js';
+// if you import a file into the file your using... You are at the parent file.
 import CurrentTotal from './components/CurrentTotal';
 
 
@@ -53,7 +54,8 @@ class App extends Component {
         <Header />
         </header>
         <EnterNumber increaseNum={this.increaseNum} decreaseNum={this.decreaseNum}/>
-        <CurrentTotal total={this.state.total}/>
+        <CurrentTotal numIncrease={this.state.total} numDecrease={this.state.total}/>
+        
       </div>
     );
   }
