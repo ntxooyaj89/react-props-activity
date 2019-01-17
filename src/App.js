@@ -4,6 +4,7 @@ import Header from './components/Header';
 import EnterNumber from './components/EnterNumber.js';
 // if you import a file into the file your using... You are at the parent file.
 import CurrentTotal from './components/CurrentTotal';
+import History from './components/History'
 
 
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
     super();
     this.state = {
       total: 0,
-      history: [],
+      history: [{value: 1} , {value: 2}],
     }
   }
 
@@ -44,6 +45,13 @@ class App extends Component {
    
   }
 
+  addToHistory = (itemToAdd) => {
+    this.setState({
+      history: [...this.state.history, itemToAdd]
+    })
+
+  }
+
 
 
 
@@ -61,7 +69,8 @@ class App extends Component {
         {/* below we are pass CurrentTotal via props. */}
         {/* state will have to match... but the name dosen't have to. 
          But the name we create here will need to be called in CurrentTotal file*/}
-        <CurrentTotal CurrentTotal={this.state.total}/>
+        <CurrentTotal addToHistory={this.addToHistory} CurrentTotal={this.state.total}/>
+        <History history={this.state.history}/>
         
       </div>
     );

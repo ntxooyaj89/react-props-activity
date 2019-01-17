@@ -2,6 +2,18 @@ import React, { Component } from 'react';
 
 
 class CurrentTotal extends Component{
+
+    handleSave = () =>{
+
+        const itemToAdd = {
+            
+            value: this.props.CurrentTotal,
+        }
+
+         this.props.addToHistory(itemToAdd)
+    }
+
+
     render() {
         return(
             <div>
@@ -11,6 +23,7 @@ class CurrentTotal extends Component{
                 {/* because we call the props "currentTotal" in App.js we will
                  call it as this.props.CurrentTotal  */}
                 <h3>{this.props.CurrentTotal}</h3>
+                <button onClick={this.handleSave}>Save</button>
                 
                
             </div>
